@@ -14,6 +14,10 @@ int main(void)
     {
 
         scanf("%d", &numary[i]);
+    }
+
+    for (int i = 0; i < sizeof(numary)/sizeof(int); i++)
+    {
         if (numary[i]%2!=0)
         {
             oddary[a]=numary[i];
@@ -25,6 +29,7 @@ int main(void)
             b++;
         }
     }
+    
 
     printf("odd number:");
     for (int i = 0; i < a; i++)
