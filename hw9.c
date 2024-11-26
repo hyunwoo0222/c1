@@ -1,27 +1,25 @@
 #include<stdio.h>
+#include<string.h>
 
 int main(void)
 {
     const int diff = 'a'-'A';
-    int ch;
+    char str[100];
     printf("Input>");
+    fgets(str,sizeof(str),stdin);
 
-    while (1)
+    for (int i = 0; i < strlen(str); i++)
     {
-        ch=getchar();
-        if (ch==EOF)
+        if (str[i]>='a' && str[i]<='z')
         {
-            break;
+            str[i]-=diff;
         }
-        if (ch>96 && ch<123)
+        else if (str[i]>='A' && str[i]<='Z')
         {
-            ch-=diff;
+            str[i]+=diff;
         }
-        else if (ch>64 && ch<91)
-        {
-            ch+=diff;
-        }
-        putchar(ch);
     }
+    printf("Output>");
+    printf("%s",str);
     
 }
